@@ -73,12 +73,21 @@ function createCarousel(root) {
     dots.push(dot);
   }
 
-  // Mueve el track a la posición indicada
+  // Mueve el track a la posición indicada.
+  // Clamp a [0, total-1]: el carrusel NO da la vuelta, se queda en los bordes.
   function goTo(index) {
-    current = (index + total) % total; // wrap-around
+    const clamped = Math.max(0, Math.min(total - 1, index));
+    current = clamped;
     track.style.transform = `translateX(-${current * 100}%)`;
     dots.forEach((d, i) => d.classList.toggle('active', i === current));
     cards.forEach((c, i) => c.setAttribute('aria-hidden', i !== current));
+    updateButtons();
+  }
+
+  // Deshabilita visualmente los botones cuando estás en los extremos
+  function updateButtons() {
+    if (prevBtn) prevBtn.disabled = current === 0;
+    if (nextBtn) nextBtn.disabled = current === total - 1;
   }
 
   prevBtn?.addEventListener('click', () => goTo(current - 1));
@@ -90,25 +99,40 @@ function createCarousel(root) {
     if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
   });
 
-  // Swipe táctil
+  // Swipe táctil: distinguimos scroll vertical de swipe horizontal
   let touchStartX = 0;
+  let touchStartY = 0;
   let touchDeltaX = 0;
+  let touchDeltaY = 0;
+  let touchActive = false;
   const SWIPE_THRESHOLD = 50;
 
   track.addEventListener('touchstart', (e) => {
+    if (e.touches.length !== 1) return;
     touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
     touchDeltaX = 0;
+    touchDeltaY = 0;
+    touchActive = true;
   }, { passive: true });
 
   track.addEventListener('touchmove', (e) => {
+    if (!touchActive) return;
     touchDeltaX = e.touches[0].clientX - touchStartX;
+    touchDeltaY = e.touches[0].clientY - touchStartY;
   }, { passive: true });
 
   track.addEventListener('touchend', () => {
-    if (Math.abs(touchDeltaX) > SWIPE_THRESHOLD) {
+    if (!touchActive) return;
+    touchActive = false;
+    // Sólo disparamos swipe si el movimiento horizontal domina al vertical
+    // y si superó el umbral mínimo — así no interferimos con el scroll vertical
+    if (Math.abs(touchDeltaX) > SWIPE_THRESHOLD && Math.abs(touchDeltaX) > Math.abs(touchDeltaY)) {
       goTo(touchDeltaX < 0 ? current + 1 : current - 1);
     }
   });
+
+  track.addEventListener('touchcancel', () => { touchActive = false; });
 
   // Estado inicial
   goTo(0);

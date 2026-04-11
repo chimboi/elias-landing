@@ -399,6 +399,11 @@ body.nav-open .nav-links {
   border-color: var(--accent);
   transform: translateY(-2px);
 }
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
 .carousel-prev { left: -8px; }
 .carousel-next { right: -8px; }
 
