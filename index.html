@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Elías Huarte — emprendedor construyendo proyectos que ayudan a los demás." />
+  <title>Elías Huarte</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Google Fonts: Poppins para toda la tipografía -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" role="banner">
+    <div class="container navbar-inner">
+      <a href="index.html" class="logo" aria-label="Inicio — Elías Huarte">EH</a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Navegación principal">
+        <a href="#hero">Sobre mí</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+
+      <!-- Botón hamburger (sólo visible en móvil) -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section id="hero" class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-text" data-animate="fade-left">
+          <h1 class="display">Mucho gusto! Soy <span class="highlight">Elías</span></h1>
+          <p class="hero-sub">Me gusta crear proyectos que <span class="highlight">ayuden a los demás</span>.</p>
+          <a href="#empresas" class="btn-primary hero-cta hero-cta-desktop">Conocer más</a>
+        </div>
+        <div class="hero-photo" data-animate="fade-right">
+          <img src="fotos/elias.jpg" alt="Foto de Elías Huarte" class="hero-img" />
+          <a href="#empresas" class="btn-primary hero-cta hero-cta-mobile">Conocer más</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EMPRESAS (Carrusel) ============ -->
+    <section id="empresas" class="section">
+      <div class="container">
+        <h2 class="section-title" data-animate="fade-up">Te cuento que he estado <span class="highlight">construyendo</span>...</h2>
+
+        <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Empresas que he construido" tabindex="0">
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+
+              <!-- Card 1: Atrevi -->
+              <article class="carousel-card">
+                <span class="card-period">2020 — 2023</span>
+                <h3 class="card-title">Atrevi</h3>
+                <img src="fotos/atrevi.jpg" alt="Atrevi" class="card-image" />
+                <div class="card-body">
+                  <p>Empecé Atrevi, mi primera empresa, a los 20 años, como podrás imaginarte, no tenía idea de nada.</p>
+                  <p>Tardamos más de un año en lanzar nuestro primer producto, que muy pocas personas usaron. Ahí aprendí la importancia de hablar con usuarios y lanzar rápido.</p>
+                  <p>A pesar de todo, ayudamos a +200 personas a invertir más de $5,000,000 MXN.</p>
+                </div>
+                <a href="https://atrevi.mx/" class="btn-ghost" target="_blank" rel="noopener noreferrer">Conoce más de Atrevi</a>
+              </article>
+
+              <!-- Card 2: Bobina -->
+              <article class="carousel-card">
+                <span class="card-period">2023 — 2025</span>
+                <h3 class="card-title">Bobina</h3>
+                <img src="fotos/bobina.jpg" alt="Bobina" class="card-image" />
+                <div class="card-body">
+                  <p>Después de cerrar Atrevi y salir de la universidad, necesitaba generar ingresos.</p>
+                  <p>Con todo el conocimiento financiero que me dejó Atrevi, empecé a dar consultoría financiera a empresas.</p>
+                  <p>Le di consultoría a +30 negocios en múltiples industrias: turismo, diseño, tecnología y servicios industriales.</p>
+                </div>
+              </article>
+
+              <!-- Card 3: Guander -->
+              <article class="carousel-card">
+                <span class="card-period">2024 — a la fecha</span>
+                <h3 class="card-title">Guander</h3>
+                <img src="fotos/guander.jpg" alt="Guander" class="card-image" />
+                <div class="card-body">
+                  <p>Este proyecto nace de dos pasiones: crear productos digitales y ayudar a otros emprendedores a no cometer los mismos errores que yo cometí con Atrevi.</p>
+                  <p>Guander ayuda a emprendedores a pasar de una idea a un negocio digital en semanas.</p>
+                  <p>Los acompañamos con todo: aterrizar la idea, ponerle nombre, definir el modelo de negocio y construir el producto.</p>
+                </div>
+                <a href="https://www.guander.mx/" class="btn-ghost" target="_blank" rel="noopener noreferrer">Conoce más de Guander</a>
+              </article>
+
+              <!-- Card 4: Tamagochi -->
+              <article class="carousel-card">
+                <span class="card-period">2025 — a la fecha</span>
+                <h3 class="card-title">Tamagochi</h3>
+                <img src="fotos/tamagochi.jpg" alt="Tamagochi" class="card-image" />
+                <div class="card-body">
+                  <p>Mi trampolín para independizarme económicamente y meterme de lleno al mundo de la tecnología.</p>
+                  <p>Somos una fábrica de software para empresas: chatbots de WhatsApp, sistemas de ventas, inventarios y dashboards.</p>
+                </div>
+                <a href="https://www.tamagochi.lat/" class="btn-ghost" target="_blank" rel="noopener noreferrer">Conoce más de Tamagochi</a>
+              </article>
+
+              <!-- Card 5: Sira -->
+              <article class="carousel-card">
+                <span class="card-period">2026 — a la fecha</span>
+                <h3 class="card-title">Sira</h3>
+                <img src="fotos/sira.jpg" alt="Sira Salud" class="card-image" />
+                <div class="card-body">
+                  <p>Esta es nuestra nueva aventura. Sira Salud es una plataforma que ayuda a clínicas a mejorar sus finanzas.</p>
+                  <p>La idea nació después de haberle dado consultoría a +100 doctores y directores de clínicas, donde me di cuenta del caos financiero que viven.</p>
+                  <p>Vamos bien — ya trabajamos con +12 clínicas en todo el país.</p>
+                </div>
+                <a href="https://www.sirasalud.com/" class="btn-ghost" target="_blank" rel="noopener noreferrer">Conoce más de Sira</a>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- Flechas de navegación -->
+          <button class="carousel-btn carousel-prev" aria-label="Anterior">‹</button>
+          <button class="carousel-btn carousel-next" aria-label="Siguiente">›</button>
+
+          <!-- Indicadores (se generan por JS) -->
+          <div class="carousel-dots" aria-label="Indicadores del carrusel"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROYECTOS POR PASIÓN (Carrusel) ============ -->
+    <section id="pasion" class="section">
+      <div class="container">
+        <h2 class="section-title section-title-pasion" data-animate="fade-up">Creo que no todo se trata de <span class="highlight">dinero</span>,<br class="br-desktop" /> por eso también hago cosas por <span class="highlight">pasión</span></h2>
+
+        <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Proyectos que hago por pasión" tabindex="0">
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+
+              <article class="carousel-card">
+                <span class="card-period">En curso</span>
+                <h3 class="card-title">Conferencias y Talleres</h3>
+                <img src="fotos/conferencias.jpg" alt="Conferencias y talleres" class="card-image" />
+                <p class="card-desc">Me gusta compartir con los demás. He dado conferencias en Talent Land, Tec de Monterrey, Universidad de Guanajuato y Unreasonable.</p>
+                <a href="https://www.youtube.com/watch?v=DAVLMcG8KNo&t=2937s" class="btn-ghost" target="_blank" rel="noopener noreferrer">Ver una conferencia</a>
+              </article>
+
+              <article class="carousel-card">
+                <span class="card-period">Anual</span>
+                <h3 class="card-title">Jalisco Tech Week</h3>
+                <img src="fotos/jtw.jpg" alt="Jalisco Tech Week" class="card-image" />
+                <p class="card-desc">Organizamos la primera tech week en Guadalajara. +100 eventos y +4,000 asistentes.</p>
+                <a href="https://jaliscotechweek.com/" class="btn-ghost" target="_blank" rel="noopener noreferrer">Conoce Jalisco Tech Week</a>
+              </article>
+
+              <article class="carousel-card">
+                <span class="card-period">Producto</span>
+                <h3 class="card-title">Naked Man</h3>
+                <img src="fotos/naked-man.png" alt="Naked Man" class="card-image" />
+                <p class="card-desc">Juego de mesa que motiva a los amigos a ser más vulnerables y conocerse más.</p>
+                <a href="https://nakedman.art/" class="btn-ghost" target="_blank" rel="noopener noreferrer">Conoce Naked Man</a>
+              </article>
+
+              <article class="carousel-card">
+                <span class="card-period">Comunidad</span>
+                <h3 class="card-title">Comunidad</h3>
+                <img src="fotos/comunidad.jpg" alt="Comunidad" class="card-image" />
+                <p class="card-desc">Me gusta crear comunidad. Constantemente organizamos charlas, salidas a correr y fiestas con personas que están creando cosas interesantes.</p>
+              </article>
+
+            </div>
+          </div>
+
+          <button class="carousel-btn carousel-prev" aria-label="Anterior">‹</button>
+          <button class="carousel-btn carousel-next" aria-label="Siguiente">›</button>
+          <div class="carousel-dots" aria-label="Indicadores del carrusel"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO / CTA ============ -->
+    <section id="contacto" class="section contact">
+      <div class="container">
+        <p class="eyebrow" data-animate="fade-up">Conectemos!</p>
+        <h2 class="display contact-headline" data-animate="fade-up">Estoy buscando proyectos que realmente <span class="highlight">mejoren la vida</span> de los demás</h2>
+
+        <div class="ideas-grid">
+          <div class="idea-card" data-animate="fade-up">
+            <span class="idea-num">01</span>
+            <p>Comunidad Los Otros: personas reuniéndose para resolver los problemas más importantes de nuestro entorno.</p>
+          </div>
+          <div class="idea-card" data-animate="fade-up">
+            <span class="idea-num">02</span>
+            <p>Mejorar la calidad de vida de adultos mayores o trabajadores industriales.</p>
+          </div>
+          <div class="idea-card" data-animate="fade-up">
+            <span class="idea-num">03</span>
+            <p>Digitalizar cooperativas de agricultores o comerciantes para que reciban condiciones de negocio más justas.</p>
+          </div>
+        </div>
+
+        <p class="contact-cta" data-animate="fade-up">Si te interesa alguna de estas ideas o tienes una idea que ayude a los demás, platiquemos:</p>
+
+        <div class="contact-links" data-animate="fade-up">
+          <a class="contact-link linkedin" href="https://www.linkedin.com/in/elias-huarte/" target="_blank" rel="noopener noreferrer" aria-label="Abrir LinkedIn de Elías Huarte en nueva pestaña">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+              <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z"/>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+
+          <a class="contact-email" href="mailto:geliashuarte@gmail.com" aria-label="Enviar correo a geliashuarte@gmail.com">
+            geliashuarte@gmail.com
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <p>Elías Huarte © 2026</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
