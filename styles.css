@@ -528,6 +528,10 @@ body.nav-open .nav-links {
   text-align: center;
   padding: 140px 20px 80px;
 }
+.blog-hero--compact {
+  min-height: auto;
+  padding: 140px 20px 40px;
+}
 .blog-hero h1 {
   font-size: clamp(3rem, 10vw, 7rem);
   margin-bottom: 20px;
@@ -541,6 +545,273 @@ body.nav-open .nav-links {
   font-size: 1.15rem;
   max-width: 500px;
   margin: 0 auto;
+}
+
+/* ---------- Blog Listing ---------- */
+.blog-listing {
+  padding-top: 0;
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 800px;
+}
+.blog-card {
+  display: block;
+  padding: 32px 28px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+}
+.blog-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+.blog-card-date {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--accent-hover);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.blog-card-title {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.blog-card-excerpt {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.blog-card-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--accent-hover);
+}
+
+/* ---------- Blog Post Article ---------- */
+.post {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 140px 20px 80px;
+}
+.post-header {
+  margin-bottom: 48px;
+}
+.post-back {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 24px;
+  transition: opacity var(--transition);
+}
+.post-back:hover {
+  opacity: 0.7;
+}
+.post-date {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+.post-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+.post-body {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+.post-body p {
+  margin-bottom: 1.5em;
+}
+.post-body p:last-child {
+  margin-bottom: 0;
+}
+.post-image {
+  width: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 30px -8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5em;
+}
+
+/* ---------- Post Actions (like / share) ---------- */
+.post-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.post-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.post-action-btn:hover {
+  border-color: var(--border-hover);
+  color: var(--accent);
+}
+.post-action-btn svg {
+  flex-shrink: 0;
+}
+.like-btn.liked {
+  color: #e74c6f;
+  border-color: rgba(231, 76, 111, 0.3);
+}
+.like-btn.liked svg {
+  fill: #e74c6f;
+}
+.post-actions--top {
+  margin-top: 0;
+  margin-bottom: 32px;
+  padding-top: 0;
+  border-top: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 24px;
+}
+
+/* ---------- Share Popup ---------- */
+.share-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.share-popup-overlay[hidden] {
+  display: none;
+}
+.share-popup {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 32px 28px;
+  max-width: 480px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.3);
+}
+.share-popup-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.6rem;
+  color: #888;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+}
+.share-popup-close:hover {
+  color: #333;
+}
+.share-popup-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #1a1a2e;
+  margin-bottom: 20px;
+}
+.share-popup-url-row {
+  display: flex;
+  gap: 10px;
+}
+.share-popup-url {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: #333;
+  background: #f5f5f7;
+  outline: none;
+}
+.share-popup-url:focus {
+  border-color: var(--accent);
+}
+.share-popup-copy {
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--transition);
+}
+.share-popup-copy:hover {
+  background: var(--accent-hover);
+}
+
+/* ---------- Blog Post: tema claro ---------- */
+body.blog-post-page {
+  --bg: #ffffff;
+  --bg-elev: #f8f9fa;
+  --card-bg: #ffffff;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(37, 99, 235, 0.3);
+  --text: #1a1a2e;
+  --text-muted: #4a4a5a;
+  --shadow-card: 0 4px 20px -8px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  background-image: none;
+  color: var(--text);
+}
+body.blog-post-page .navbar {
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+body.blog-post-page .logo {
+  color: #1a1a2e;
+}
+body.blog-post-page .nav-links a {
+  color: #1a1a2e;
+}
+body.blog-post-page .nav-links a:hover {
+  color: var(--accent);
+}
+body.blog-post-page .nav-toggle span {
+  background: #1a1a2e;
+}
+body.blog-post-page.nav-open .nav-links {
+  background: rgba(255, 255, 255, 0.96);
+}
+body.blog-post-page .footer {
+  border-top-color: rgba(0, 0, 0, 0.08);
+  color: #4a4a5a;
 }
 
 /* ---------- Animaciones on-scroll ---------- */
@@ -640,6 +911,14 @@ body.nav-open .nav-links {
     align-items: center;
     gap: 40px;
     flex-wrap: wrap;
+  }
+
+  /* Blog */
+  .blog-hero--compact {
+    padding: 180px 40px 40px;
+  }
+  .post {
+    padding: 180px 40px 100px;
   }
 }
 

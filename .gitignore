@@ -17,3 +17,6 @@ npm-debug.log*
 # Env
 .env
 .env.local
+
+# SQL setup (ya ejecutado en Supabase)
+supabase-setup.sql
