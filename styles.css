@@ -653,6 +653,36 @@ body.nav-open .nav-links {
   margin-bottom: 1.5em;
 }
 
+/* ---------- Variante poema (post corto, etéreo, centrado) ---------- */
+.post-header--poem {
+  text-align: center;
+}
+.post-header--poem .post-back {
+  display: inline-block;
+}
+.post-title--poem {
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
+}
+.post-body--poem {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-weight: 300;
+  font-size: clamp(1.15rem, 2.2vw, 1.35rem);
+  line-height: 2;
+  letter-spacing: 0.01em;
+  color: var(--text);
+}
+.post-body--poem p {
+  margin-bottom: 2.5em;
+}
+.post-body--poem p:last-child {
+  margin-bottom: 0;
+}
+
 /* ---------- Post Actions (like / share) ---------- */
 .post-actions {
   display: flex;
